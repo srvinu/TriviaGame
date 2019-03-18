@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="assets/jscript/trivia.js"></script> -->
+<title> Trivia </title>
+<body>
+    <h1 class="display-5" id="title" style="text-align:center; display: block; font-size: 65px; color: navy">Totally Trivial Trivia ! </h1>
+    <div class="wrapper" id="btnDiv">
+        <button class="button" id="startButton"><span> START </span></button>
+    </div>
+    <div id="timerDiv"></div>
+    <div id="triviaDiv" class="answerWrap">
+    </div>
+    <div class="wrapper" id="restartGame" style="display: none">
+      <button class="restartbtn" id="restartGamebtn" onclick="restartGame()"><span> Restart Trivia</span></button>
+    </div>
+</body>
+<script type="text/javascript" src="assets/jscript/trivia.js"></script>
+</html>

@@ -9,3 +9,4 @@ Used : Click Event to pick this click value/event<br />
 >$("div").on("click", ".answer", function(event) {<br />
   >selectedAnswer = $(this).text()<br /><br />
 ## Author Vinod Ramadasan
+
