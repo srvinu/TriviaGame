@@ -96,3 +96,24 @@ body {
     cursor: pointer;
     border-radius: 50%;
 }
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: navy;
+  color: white;
+  text-align: center;
+  display: none;
+  position: fixed;
+  vertical-align: middle;
+  top: 15%;
+  left: 45%;
+}
+
+img {
+  width: 40%;
+}

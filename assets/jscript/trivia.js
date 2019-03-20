@@ -45,6 +45,18 @@ var correctArray = [
   "Alaska",
   "Trenton"
 ];
+var images = [
+  "assets/images/columbus.jpg",
+  "assets/images/1777.jpg",
+  "assets/images/washington.jpeg",
+  "assets/images/lincoln.jpeg",
+  "assets/images/edison.jpg",
+  "assets/images/jefferson.jpeg",
+  "assets/images/RI.jpg",
+  "assets/images/neil.jpeg",
+  "assets/images/alaska.jpg",
+  "assets/images/trenton.jpg"
+]
 // ----------> Question and Answer Defenition
 
 $("#startButton").on("click", run);
@@ -52,9 +64,9 @@ $("#startButton").on("click", run);
 function run() {
   // setTimeout(wait, 2500)
   $("#startButton").hide();
-
-    generateHTML(qCounter);
-    intervalId = setInterval(decrement, 1000);
+  // move();
+  generateHTML(qCounter);
+  intervalId = setInterval(decrement, 1000);
 
 }
 function decrement() {
@@ -86,11 +98,11 @@ function generateHTML(qacounter) {
 // }
 function correcAnswer(){
   if(validAns){
-    triviaDivHTML= "<h2 style='text-align:center; color: navy'> Correct! <br /> Answer is: <br /> "+ correctArray[qCounter] + "</h2>"
+    triviaDivHTML= "<h2 style='text-align:center; color: navy'> Correct! <br /> Answer is: <br /> "+ correctArray[qCounter] + "</h2><img src='"+images[qCounter]+"'>"
     $("#triviaDiv").html(triviaDivHTML);
     correctCounter++;
   } else {
-    triviaDivHTML= "<h2 style='text-align:center; color: navy'> Sorry Wrong! <br /> Correct Answer is: <br />"+ correctArray[qCounter] + "</h2>"
+    triviaDivHTML= "<h2 style='text-align:center; color: navy'> Sorry Wrong! <br /> Correct Answer is: <br />"+ correctArray[qCounter] + "</h2><img src='"+images[qCounter]+"'>"
     $("#triviaDiv").html(triviaDivHTML);
     incorrectCounter++;
 
@@ -103,7 +115,7 @@ function noAnswerTimeOut(){
     noAnsCounter++;
     stop();
     number=15;
-    if (qCounter != questionsArray.length -1 ){
+    if (qCounter != questionsArray.length -1){
       qCounter++;
     } else {
       console.log("thats it end of quiz");
@@ -122,6 +134,23 @@ function displayScore() {
   triviaDivHTML= "<h2 style='text-align:center; color: navy'>Here is your Final Score: <br/>Correct Answers: "+correctCounter+"<br/>Wrong Answers: "+incorrectCounter+"<br/>Unanswered: "+noAnsCounter+" </h2>"
   $("#triviaDiv").html(triviaDivHTML);
 }
+// function move() {
+//   console.log("running move");
+//   $("#myBar").show();
+//   var elem = document.getElementById("myBar");
+//   var width = 15;
+//   var id = setInterval(frame, 1000);
+//   function frame() {
+//     if (width <= 0) {
+//       clearInterval(id);
+//     } else {
+//       width--;
+//       elem.style.width = width + '%';
+//       elem.innerHTML = width * 1  + 'secs';
+//     }
+//   }
+// }
+
 function restartGame(){
    number = 15;
    intervalId;
@@ -148,7 +177,7 @@ $("div").on("click", ".answer", function(event) {
   console.log(selectedAnswer)
   correcAnswer();
   console.log("QCounter: " +qCounter)
-  if (qCounter != questionsArray.length -1 ){
+  if (qCounter != questionsArray.length-1){
     qCounter++;
   } else {
     console.log("thats it end of quiz");
