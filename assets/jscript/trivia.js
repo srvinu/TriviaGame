@@ -8,7 +8,7 @@ var waitCounter = 0;
 var timeUp = false;
 var validAns = false;
 
-// ----------> Question and Answer Defenition
+// START ----------> Question and Answer Defenition
 var questionsArray = [
   "1. Who discovers America?",
   "2. In which year America is recogonized as a Country?",
@@ -57,7 +57,7 @@ var images = [
   "assets/images/alaska.jpg",
   "assets/images/trenton.jpg"
 ]
-// ----------> Question and Answer Defenition
+// END ----------> Question and Answer Defenition
 
 $("#startButton").on("click", run);
 
@@ -180,8 +180,9 @@ $("div").on("click", ".answer", function(event) {
   if (qCounter != questionsArray.length-1){
     qCounter++;
   } else {
-    console.log("thats it end of quiz");
-    displayScore();
+    console.log("thats it! end of quiz");
+    // displayScore();
+    setTimeout(displayScore, 3000);
     $("#restartGame").show();
     return false;
   }
